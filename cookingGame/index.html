@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+  <div id="preloader">
+    <div class="logoName">
+      <img src="img/logoName.png" alt="">
+    </div>
+    <div id="logo1">
+      <img src="img/logo.png" class="one" alt="">
+      <div id="logo2">
+        <img src="img/logo.png" alt="">
+      </div>
+    </div>
+    <div id="start">Start</div>
+  </div>
+
+  <div class="container">
+
+    <div class="row topyellow">
+      <div class="col s8 heading">
+        <div class="col s12 ">
+          <div class="col s3">
+            <p class="rImg" onclick="buy(0)"></p>
+            <p class="rPrice">$ </p>
+          </div>
+          <div class="col s3 ">
+            <p class="rImg" onclick="buy(1)"></p>
+            <p class="rPrice">$ </p>
+          </div>
+          <div class="col s3 ">
+            <p class="rImg" onclick="buy(2)"></p>
+            <p class="rPrice">$ </p>
+          </div>
+          <div class="col s3 "><!-- <a  id="bRefresh" class="btn-floating btn-large waves-effect waves-light green refresh refreshbtn"><i class="material-icons">loop</i></a> -->
+<a id="bRefresh" class="waves-effect waves-light refreshBtn"><i class="material-icons left">loop</i> $25</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col s4 heading">
+        <div class="col s6"><div class="bank"><img src="img/money-bag.png" alt=""></div></div>
+        <div class="col s6"> 
+
+        <a  id="help" class=" refresh refreshbtn"><i style="font-size:30px"class="material-icons">live_help</i></a>
+
+        <div class="cashtop">$ <span id="bank"></span></div></div>
+
+      </div>
+
+    </div>
+
+    <!-- //////////////////////////////////////////////////main -->
+
+    <div class="row topyellow">
+      <div class="col s6">
+
+        <ul class="collection with-header">
+          <li class="collection-item">
+            <div class="row row0 valign-wrapper">
+              <div class="col s2">
+                <div class="image-sm  prodImg"></div>
+              </div>
+              <div class="col s6"><span class="prodName"></span></div>
+              <div class="col s2"><span class="prodPrice"></span></div>
+              <div class="col s2"><span class="prodCount"></span></div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row row0 valign-wrapper">
+              <div class="col s2">
+                <div class="image-sm  prodImg"></div>
+              </div>
+              <div class="col s6"><span class="prodName"></span></div>
+              <div class="col s2"><span class="prodPrice"></span></div>
+              <div class="col s2"><span class="prodCount"></span></div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row row0 valign-wrapper">
+              <div class="col s2">
+                <div class="image-sm  prodImg"></div>
+              </div>
+              <div class="col s6"><span class="prodName"></span></div>
+              <div class="col s2"><span class="prodPrice"></span></div>
+              <div class="col s2"><span class="prodCount"></span></div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row row0 valign-wrapper">
+              <div class="col s2">
+                <div class="image-sm  prodImg"></div>
+              </div>
+              <div class="col s6"><span class="prodName"></span></div>
+              <div class="col s2"><span class="prodPrice"></span></div>
+              <div class="col s2"><span class="prodCount"></span></div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row row0 valign-wrapper">
+              <div class="col s2">
+                <div class="image-sm  prodImg"></div>
+              </div>
+              <div class="col s6"><span class="prodName"></span></div>
+              <div class="col s2"><span class="prodPrice"></span></div>
+              <div class="col s2"><span class="prodCount"></span></div>
+          </li>
+        </ul>
+
+        </div>
+        <div class="col s6">
+          <ul class="collection with-header">
+            <li class="collection-item">
+              <div class="row row0 valign-wrapper">
+                <div class="col s2">
+                  <div class="image-sm  prodImg"></div>
+                </div>
+                <div class="col s6"><span class="prodName"></span></div>
+                <div class="col s2"><span class="prodPrice"></span></div>
+                <div class="col s2"><span class="prodCount"></span></div>
+              </div>
+            </li>
+            <li class="collection-item">
+              <div class="row row0 valign-wrapper">
+                <div class="col s2">
+                  <div class="image-sm  prodImg"></div>
+                </div>
+                <div class="col s6"><span class="prodName"></span></div>
+                <div class="col s2"><span class="prodPrice"></span></div>
+                <div class="col s2"><span class="prodCount"></span></div>
+            </li>
+            <li class="collection-item">
+              <div class="row row0 valign-wrapper">
+                <div class="col s2">
+                  <div class="image-sm  prodImg"></div>
+                </div>
+                <div class="col s6"><span class="prodName"></span></div>
+                <div class="col s2"><span class="prodPrice"></span></div>
+                <div class="col s2"><span class="prodCount"></span></div>
+            </li>
+            <li class="collection-item">
+              <div class="row row0 valign-wrapper">
+                <div class="col s2">
+                  <div class="image-sm  prodImg"></div>
+                </div>
+                <div class="col s6"><span class="prodName"></span></div>
+                <div class="col s2"><span class="prodPrice"></span></div>
+                <div class="col s2"><span class="prodCount"></span></div>
+            </li>
+            <li class="collection-item">
+              <div class="row row0 valign-wrapper">
+                <div class="col s2">
+                  <div class="image-sm  prodImg"></div>
+                </div>
+                <div class="col s6"><span class="prodName"></span></div>
+                <div class="col s2"><span class="prodPrice"></span></div>
+                <div class="col s2"><span class="prodCount"></span></div>
+            </li>
+          </ul>
+
+          </div>
+          </div>
+
+          <!-- /////////////////////////////////////////////////////// footer -->
+
+          <div class="row footer topyellow">
+            <div class="col s2 bl">
+              <div class="col s12 imgDish" onclick="cook('buter')">
+                <img src="dishes/buter.png" alt="">
+                <div class="col s12 blue recipe">
+                  <ol>
+                    <li>Мука</li>
+                    <li>Колбаса</li>
+                    <li>Масло</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col s12 red blur"></div>
+              <div class="col s12">
+                <div class="green sellBtn" onclick="sell(50)">sell $ 50</div>
+              </div>
+            </div>
+            <div class="col s2 bl">
+              <div class="col s12 imgDish" onclick="cook('blin')">
+                <img src="dishes/blin.png" alt="">
+                <div class="col s12 blue recipe">
+                  <ol>
+                    <li>Мука</li>
+                    <li>Масло</li>
+                    <li>Сыр</li>
+                    <li>Приправа</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col s12 red blur"></div>
+              <div class="col s12">
+                <div class="green sellBtn" onclick="sell(120)">sell $ 120</div>
+              </div>
+            </div>
+            <div class="col s2 bl">
+              <div class="col s12 imgDish" onclick="cook('hotdog')">
+                <img src="dishes/hotDog.png" alt="">
+                <div class="col s12 blue recipe">
+                  <ol>
+                    <li>Мука</li>
+                    <li>Масло</li>
+                    <li>Утка</li>
+                    <li>Сыр</li>
+                    <li>Зелень</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col s12 red blur"></div>
+              <div class="col s12">
+                <div class="green sellBtn" onclick="sell(220)">Sell $ 220</div>
+              </div>
+            </div>
+            <div class="col s2 bl">
+              <div class="col s12 imgDish" onclick="cook('pizza')">
+                <img src="dishes/piza.png" alt="">
+                <div class="col s12 blue recipe">
+                  <ol>
+                    <li>Мука</li>
+                    <li>Колбаса</li>
+                    <li>Масло</li>
+                    <li>Сыр</li>
+                    <li>Зелень</li>
+                    <li>Капуста</li>
+                    <li>Горгонзолла</li>
+                    <li>Оливки</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col s12 red blur"></div>
+              <div class="col s12">
+                <div class="green sellBtn" onclick="sell(290)">sell $ 290</div>
+              </div>
+            </div>
+            <div class="col s2 bl">
+              <div class="col s12 imgDish" onclick="cook('ytka')">
+                <img src="dishes/utka.png" alt="">
+                <div class="col s12 blue recipe">
+                  <ol>
+                    <li>Мука</li>
+                    <li>Колбаса</li>
+                    <li>Масло</li>
+                    <li>Утка</li>
+                    <li>Сыр</li>
+                    <li>Зелень</li>
+                    <li>Приправа</li>
+                    <li>Капуста</li>
+                    <li>Горгонзолла</li>
+                    <li>Оливки</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="col s12 red blur"></div>
+              <div class="col s12">
+                <div class="green sellBtn" onclick="sell(450)">sell $ 450</div>
+              </div>
+            </div>
+            <div class="col s2 logobottom">
+                
+            </div>
+          </div>
+
+
+  </div>
+
+  <div id="lose">
+    <h1>You lose!!!</h1>
+    <div id="newGame">
+      <p>Do you want to start a new game?</p>
+      <div class="btns">
+        <span id="yes">Yes</span>
+        <span id="no">No</span>
+      </div>
+      <p id="knewIt">Good decision!</p>
+    </div>
+  </div>
+
+
+  <div id="legend">
+    
+    <ol class="rules">
+      <li>Правила игры</li>
+      <li>Правила игры</li>
+      <li>Правила игры</li>
+      <li>Правила игры</li>
+      <li>Правила игры</li>
+    </ol>
+    <span id="closeHelp">Got it!</span>
+  </div>
+
+
+          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
+          <script type="text/javascript" src="js/materialize.min.js" defer></script>
+          <script src="js/script.js" defer></script>
+</body>
+
+</html>
