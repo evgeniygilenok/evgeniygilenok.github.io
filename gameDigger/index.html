@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Digger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="start-page">
+            <div id="start-btn">START</div>
+            <div id="rules-btn">RULES</div>
+            <div class="dashboard-btn">DASHBOARD</div>
+        </div>
+
+        <div class="rules">
+            <div class="rules-wrap">
+                <ol class="rules-list">
+                    <h3>Правила игры</h3>
+                    <p>Что может быть проще? Всего лишь собрать все сундучки с золотом. Мешать Вам будут лутучие мыши, которые со временем трансформируются в умных летучих мышей. Они умеют находить след игрока и идти по нему с большей скоростью чем обычные. С небольшим шансом они могут оставить после себя сердце, взяв которое Вы получаете +1 жизнь. Если жизнь не забирать ее сьедят летучие мыши. Со временем тоннели зарастают паутиной и если Вы попадете в нее, то станете неподвижными на некоторое время. Для борьбы с врагами у Вас есть возможность делать костер, через который летучие мыши не могут пролетать, но его действие всего 3 секунды, и делать костер можно только по одному. С помощью костра можно уничтожать паутитну просто сделав его рядом с ней. С повышением уровня увеличивается количество золота, камней, врагов, увеличивается скорость заростания тонеллей паутиной. Собери как можно больше сундучков и стань самым крутым в игре (здесь может быть Ваше предложение)</p>
+                    <p class="game-control">Управление движением героя осуществляется с помощью стрелочек<br>
+                    Создать костер - space<br>
+                    Старт\рестарт уровня - Enter
+                    </p>
+                </ol>
+                <div id="close-rules">X</div>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="dashboard-wrap">
+                <div id="close-dashboard">X</div>
+                <p>Best of the best!</p>
+                <div id="dashboard-list">
+                    <ol id="best-list">
+                        
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div id="start-level">
+            <div id="start-new-level">GO!<br>Level
+                <span id="lvl-number">1</span>
+            </div>
+        </div>
+
+        <div id="restart">
+            <p>Ooops!</p>
+            <div id="restart-btn">Restart level</div>
+        </div>
+
+        <div id="new-game">
+            <p>GAME OVER!<br>Next time will be better!</p>
+            <div id="new-game-btn">New game</div>
+            <div class="dashboard-btn">DASHBOARD</div>
+        </div>
+
+        <div class="field">
+            <div class="game-title">
+                <div class="game">
+                    <p>Total score</p>
+                    <p id="total-score">0</p>
+                </div>
+                <div class="score">Gold:
+                    <span>
+                        <span id="score">0 </span>/
+                    <span id="score-max">0</span>
+                    </span>
+                    <p>Fires left:<br> 
+                        <span class="fireCountOutput"></span>
+                    </p>
+                </div>
+                <div class="health-panel">
+                    <p class="lives">Lives</p>
+                    <span class="health">
+                    </span>
+                </div>
+                <div class="enemyScore">Enemy:
+                    <span id="enemy">0</span>
+                </div>
+                <div class="level">Level:
+                    <span id="level">1</span>
+                </div>
+            </div>
+            <div class="game-field">
+                <div class="game-field-blocks">
+                    <div class="box" style="top: 0px; left: 0px;" data-block-id="0"></div>
+                    <div class="box" style="top: 0px; left: 30px;" data-block-id="1"></div>
+                    <div class="box" style="top: 0px; left: 60px;" data-block-id="2"></div>
+                    <div class="box" style="top: 0px; left: 90px;" data-block-id="3"></div>
+                    <div class="box" style="top: 0px; left: 120px;" data-block-id="4"></div>
+                    <div class="box" style="top: 0px; left: 150px;" data-block-id="5"></div>
+                    <div class="box" style="top: 0px; left: 180px;" data-block-id="6"></div>
+                    <div class="box" style="top: 0px; left: 210px;" data-block-id="7"></div>
+                    <div class="box" style="top: 0px; left: 240px;" data-block-id="8"></div>
+                    <div class="box" style="top: 0px; left: 270px;" data-block-id="9"></div>
+                    <div class="box" style="top: 0px; left: 300px;" data-block-id="10"></div>
+                    <div class="box" style="top: 0px; left: 330px;" data-block-id="11"></div>
+                    <div class="box" style="top: 0px; left: 360px;" data-block-id="12"></div>
+                    <div class="box" style="top: 0px; left: 390px;" data-block-id="13"></div>
+                    <div class="box" style="top: 0px; left: 420px;" data-block-id="14"></div>
+                    <div class="box" style="top: 0px; left: 450px;" data-block-id="15"></div>
+                    <div class="box" style="top: 0px; left: 480px;" data-block-id="16"></div>
+                    <div class="box" style="top: 0px; left: 510px;" data-block-id="17"></div>
+                    <div class="box" style="top: 0px; left: 540px;" data-block-id="18"></div>
+                    <div class="box" style="top: 0px; left: 570px;" data-block-id="19"></div>
+                    <div class="box" style="top: 30px; left: 0px;" data-block-id="20"></div>
+                    <div class="box" style="top: 30px; left: 30px;" data-block-id="21"></div>
+                    <div class="box" style="top: 30px; left: 60px;" data-block-id="22"></div>
+                    <div class="box" style="top: 30px; left: 90px;" data-block-id="23"></div>
+                    <div class="box" style="top: 30px; left: 120px;" data-block-id="24"></div>
+                    <div class="box" style="top: 30px; left: 150px;" data-block-id="25"></div>
+                    <div class="box" style="top: 30px; left: 180px;" data-block-id="26"></div>
+                    <div class="box" style="top: 30px; left: 210px;" data-block-id="27"></div>
+                    <div class="box" style="top: 30px; left: 240px;" data-block-id="28"></div>
+                    <div class="box" style="top: 30px; left: 270px;" data-block-id="29"></div>
+                    <div class="box" style="top: 30px; left: 300px;" data-block-id="30"></div>
+                    <div class="box" style="top: 30px; left: 330px;" data-block-id="31"></div>
+                    <div class="box" style="top: 30px; left: 360px;" data-block-id="32"></div>
+                    <div class="box" style="top: 30px; left: 390px;" data-block-id="33"></div>
+                    <div class="box" style="top: 30px; left: 420px;" data-block-id="34"></div>
+                    <div class="box" style="top: 30px; left: 450px;" data-block-id="35"></div>
+                    <div class="box" style="top: 30px; left: 480px;" data-block-id="36"></div>
+                    <div class="box" style="top: 30px; left: 510px;" data-block-id="37"></div>
+                    <div class="box" style="top: 30px; left: 540px;" data-block-id="38"></div>
+                    <div class="box" style="top: 30px; left: 570px;" data-block-id="39"></div>
+                    <div class="box" style="top: 60px; left: 0px;" data-block-id="40"></div>
+                    <div class="box" style="top: 60px; left: 30px;" data-block-id="41"></div>
+                    <div class="box" style="top: 60px; left: 60px;" data-block-id="42"></div>
+                    <div class="box" style="top: 60px; left: 90px;" data-block-id="43"></div>
+                    <div class="box" style="top: 60px; left: 120px;" data-block-id="44"></div>
+                    <div class="box" style="top: 60px; left: 150px;" data-block-id="45"></div>
+                    <div class="box" style="top: 60px; left: 180px;" data-block-id="46"></div>
+                    <div class="box" style="top: 60px; left: 210px;" data-block-id="47"></div>
+                    <div class="box" style="top: 60px; left: 240px;" data-block-id="48"></div>
+                    <div class="box" style="top: 60px; left: 270px;" data-block-id="49"></div>
+                    <div class="box" style="top: 60px; left: 300px;" data-block-id="50"></div>
+                    <div class="box" style="top: 60px; left: 330px;" data-block-id="51"></div>
+                    <div class="box" style="top: 60px; left: 360px;" data-block-id="52"></div>
+                    <div class="box" style="top: 60px; left: 390px;" data-block-id="53"></div>
+                    <div class="box" style="top: 60px; left: 420px;" data-block-id="54"></div>
+                    <div class="box" style="top: 60px; left: 450px;" data-block-id="55"></div>
+                    <div class="box" style="top: 60px; left: 480px;" data-block-id="56"></div>
+                    <div class="box" style="top: 60px; left: 510px;" data-block-id="57"></div>
+                    <div class="box" style="top: 60px; left: 540px;" data-block-id="58"></div>
+                    <div class="box" style="top: 60px; left: 570px;" data-block-id="59"></div>
+                    <div class="box" style="top: 90px; left: 0px;" data-block-id="60"></div>
+                    <div class="box" style="top: 90px; left: 30px;" data-block-id="61"></div>
+                    <div class="box" style="top: 90px; left: 60px;" data-block-id="62"></div>
+                    <div class="box" style="top: 90px; left: 90px;" data-block-id="63"></div>
+                    <div class="box" style="top: 90px; left: 120px;" data-block-id="64"></div>
+                    <div class="box" style="top: 90px; left: 150px;" data-block-id="65"></div>
+                    <div class="box" style="top: 90px; left: 180px;" data-block-id="66"></div>
+                    <div class="box" style="top: 90px; left: 210px;" data-block-id="67"></div>
+                    <div class="box" style="top: 90px; left: 240px;" data-block-id="68"></div>
+                    <div class="box" style="top: 90px; left: 270px;" data-block-id="69"></div>
+                    <div class="box" style="top: 90px; left: 300px;" data-block-id="70"></div>
+                    <div class="box" style="top: 90px; left: 330px;" data-block-id="71"></div>
+                    <div class="box" style="top: 90px; left: 360px;" data-block-id="72"></div>
+                    <div class="box" style="top: 90px; left: 390px;" data-block-id="73"></div>
+                    <div class="box" style="top: 90px; left: 420px;" data-block-id="74"></div>
+                    <div class="box" style="top: 90px; left: 450px;" data-block-id="75"></div>
+                    <div class="box" style="top: 90px; left: 480px;" data-block-id="76"></div>
+                    <div class="box" style="top: 90px; left: 510px;" data-block-id="77"></div>
+                    <div class="box" style="top: 90px; left: 540px;" data-block-id="78"></div>
+                    <div class="box" style="top: 90px; left: 570px;" data-block-id="79"></div>
+                    <div class="box" style="top: 120px; left: 0px;" data-block-id="80"></div>
+                    <div class="box" style="top: 120px; left: 30px;" data-block-id="81"></div>
+                    <div class="box" style="top: 120px; left: 60px;" data-block-id="82"></div>
+                    <div class="box" style="top: 120px; left: 90px;" data-block-id="83"></div>
+                    <div class="box" style="top: 120px; left: 120px;" data-block-id="84"></div>
+                    <div class="box" style="top: 120px; left: 150px;" data-block-id="85"></div>
+                    <div class="box" style="top: 120px; left: 180px;" data-block-id="86"></div>
+                    <div class="box" style="top: 120px; left: 210px;" data-block-id="87"></div>
+                    <div class="box" style="top: 120px; left: 240px;" data-block-id="88"></div>
+                    <div class="box" style="top: 120px; left: 270px;" data-block-id="89"></div>
+                    <div class="box" style="top: 120px; left: 300px;" data-block-id="90"></div>
+                    <div class="box" style="top: 120px; left: 330px;" data-block-id="91"></div>
+                    <div class="box" style="top: 120px; left: 360px;" data-block-id="92"></div>
+                    <div class="box" style="top: 120px; left: 390px;" data-block-id="93"></div>
+                    <div class="box" style="top: 120px; left: 420px;" data-block-id="94"></div>
+                    <div class="box" style="top: 120px; left: 450px;" data-block-id="95"></div>
+                    <div class="box" style="top: 120px; left: 480px;" data-block-id="96"></div>
+                    <div class="box" style="top: 120px; left: 510px;" data-block-id="97"></div>
+                    <div class="box" style="top: 120px; left: 540px;" data-block-id="98"></div>
+                    <div class="box" style="top: 120px; left: 570px;" data-block-id="99"></div>
+                    <div class="box" style="top: 150px; left: 0px;" data-block-id="100"></div>
+                    <div class="box" style="top: 150px; left: 30px;" data-block-id="101"></div>
+                    <div class="box" style="top: 150px; left: 60px;" data-block-id="102"></div>
+                    <div class="box" style="top: 150px; left: 90px;" data-block-id="103"></div>
+                    <div class="box" style="top: 150px; left: 120px;" data-block-id="104"></div>
+                    <div class="box" style="top: 150px; left: 150px;" data-block-id="105"></div>
+                    <div class="box" style="top: 150px; left: 180px;" data-block-id="106"></div>
+                    <div class="box" style="top: 150px; left: 210px;" data-block-id="107"></div>
+                    <div class="box" style="top: 150px; left: 240px;" data-block-id="108"></div>
+                    <div class="box" style="top: 150px; left: 270px;" data-block-id="109"></div>
+                    <div class="box" style="top: 150px; left: 300px;" data-block-id="110"></div>
+                    <div class="box" style="top: 150px; left: 330px;" data-block-id="111"></div>
+                    <div class="box" style="top: 150px; left: 360px;" data-block-id="112"></div>
+                    <div class="box" style="top: 150px; left: 390px;" data-block-id="113"></div>
+                    <div class="box" style="top: 150px; left: 420px;" data-block-id="114"></div>
+                    <div class="box" style="top: 150px; left: 450px;" data-block-id="115"></div>
+                    <div class="box" style="top: 150px; left: 480px;" data-block-id="116"></div>
+                    <div class="box" style="top: 150px; left: 510px;" data-block-id="117"></div>
+                    <div class="box" style="top: 150px; left: 540px;" data-block-id="118"></div>
+                    <div class="box" style="top: 150px; left: 570px;" data-block-id="119"></div>
+                    <div class="box" style="top: 180px; left: 0px;" data-block-id="120"></div>
+                    <div class="box" style="top: 180px; left: 30px;" data-block-id="121"></div>
+                    <div class="box" style="top: 180px; left: 60px;" data-block-id="122"></div>
+                    <div class="box" style="top: 180px; left: 90px;" data-block-id="123"></div>
+                    <div class="box" style="top: 180px; left: 120px;" data-block-id="124"></div>
+                    <div class="box" style="top: 180px; left: 150px;" data-block-id="125"></div>
+                    <div class="box" style="top: 180px; left: 180px;" data-block-id="126"></div>
+                    <div class="box" style="top: 180px; left: 210px;" data-block-id="127"></div>
+                    <div class="box" style="top: 180px; left: 240px;" data-block-id="128"></div>
+                    <div class="box" style="top: 180px; left: 270px;" data-block-id="129"></div>
+                    <div class="box" style="top: 180px; left: 300px;" data-block-id="130"></div>
+                    <div class="box" style="top: 180px; left: 330px;" data-block-id="131"></div>
+                    <div class="box" style="top: 180px; left: 360px;" data-block-id="132"></div>
+                    <div class="box" style="top: 180px; left: 390px;" data-block-id="133"></div>
+                    <div class="box" style="top: 180px; left: 420px;" data-block-id="134"></div>
+                    <div class="box" style="top: 180px; left: 450px;" data-block-id="135"></div>
+                    <div class="box" style="top: 180px; left: 480px;" data-block-id="136"></div>
+                    <div class="box" style="top: 180px; left: 510px;" data-block-id="137"></div>
+                    <div class="box" style="top: 180px; left: 540px;" data-block-id="138"></div>
+                    <div class="box" style="top: 180px; left: 570px;" data-block-id="139"></div>
+                    <div class="box" style="top: 210px; left: 0px;" data-block-id="140"></div>
+                    <div class="box" style="top: 210px; left: 30px;" data-block-id="141"></div>
+                    <div class="box" style="top: 210px; left: 60px;" data-block-id="142"></div>
+                    <div class="box" style="top: 210px; left: 90px;" data-block-id="143"></div>
+                    <div class="box" style="top: 210px; left: 120px;" data-block-id="144"></div>
+                    <div class="box" style="top: 210px; left: 150px;" data-block-id="145"></div>
+                    <div class="box" style="top: 210px; left: 180px;" data-block-id="146"></div>
+                    <div class="box" style="top: 210px; left: 210px;" data-block-id="147"></div>
+                    <div class="box" style="top: 210px; left: 240px;" data-block-id="148"></div>
+                    <div class="box" style="top: 210px; left: 270px;" data-block-id="149"></div>
+                    <div class="box" style="top: 210px; left: 300px;" data-block-id="150"></div>
+                    <div class="box" style="top: 210px; left: 330px;" data-block-id="151"></div>
+                    <div class="box" style="top: 210px; left: 360px;" data-block-id="152"></div>
+                    <div class="box" style="top: 210px; left: 390px;" data-block-id="153"></div>
+                    <div class="box" style="top: 210px; left: 420px;" data-block-id="154"></div>
+                    <div class="box" style="top: 210px; left: 450px;" data-block-id="155"></div>
+                    <div class="box" style="top: 210px; left: 480px;" data-block-id="156"></div>
+                    <div class="box" style="top: 210px; left: 510px;" data-block-id="157"></div>
+                    <div class="box" style="top: 210px; left: 540px;" data-block-id="158"></div>
+                    <div class="box" style="top: 210px; left: 570px;" data-block-id="159"></div>
+                    <div class="box" style="top: 240px; left: 0px;" data-block-id="160"></div>
+                    <div class="box" style="top: 240px; left: 30px;" data-block-id="161"></div>
+                    <div class="box" style="top: 240px; left: 60px;" data-block-id="162"></div>
+                    <div class="box" style="top: 240px; left: 90px;" data-block-id="163"></div>
+                    <div class="box" style="top: 240px; left: 120px;" data-block-id="164"></div>
+                    <div class="box" style="top: 240px; left: 150px;" data-block-id="165"></div>
+                    <div class="box" style="top: 240px; left: 180px;" data-block-id="166"></div>
+                    <div class="box" style="top: 240px; left: 210px;" data-block-id="167"></div>
+                    <div class="box" style="top: 240px; left: 240px;" data-block-id="168"></div>
+                    <div class="box" style="top: 240px; left: 270px;" data-block-id="169"></div>
+                    <div class="box" style="top: 240px; left: 300px;" data-block-id="170"></div>
+                    <div class="box" style="top: 240px; left: 330px;" data-block-id="171"></div>
+                    <div class="box" style="top: 240px; left: 360px;" data-block-id="172"></div>
+                    <div class="box" style="top: 240px; left: 390px;" data-block-id="173"></div>
+                    <div class="box" style="top: 240px; left: 420px;" data-block-id="174"></div>
+                    <div class="box" style="top: 240px; left: 450px;" data-block-id="175"></div>
+                    <div class="box" style="top: 240px; left: 480px;" data-block-id="176"></div>
+                    <div class="box" style="top: 240px; left: 510px;" data-block-id="177"></div>
+                    <div class="box" style="top: 240px; left: 540px;" data-block-id="178"></div>
+                    <div class="box" style="top: 240px; left: 570px;" data-block-id="179"></div>
+                    <div class="box" style="top: 270px; left: 0px;" data-block-id="180"></div>
+                    <div class="box" style="top: 270px; left: 30px;" data-block-id="181"></div>
+                    <div class="box" style="top: 270px; left: 60px;" data-block-id="182"></div>
+                    <div class="box" style="top: 270px; left: 90px;" data-block-id="183"></div>
+                    <div class="box" style="top: 270px; left: 120px;" data-block-id="184"></div>
+                    <div class="box" style="top: 270px; left: 150px;" data-block-id="185"></div>
+                    <div class="box" style="top: 270px; left: 180px;" data-block-id="186"></div>
+                    <div class="box" style="top: 270px; left: 210px;" data-block-id="187"></div>
+                    <div class="box" style="top: 270px; left: 240px;" data-block-id="188"></div>
+                    <div class="box" style="top: 270px; left: 270px;" data-block-id="189"></div>
+                    <div class="box" style="top: 270px; left: 300px;" data-block-id="190"></div>
+                    <div class="box" style="top: 270px; left: 330px;" data-block-id="191"></div>
+                    <div class="box" style="top: 270px; left: 360px;" data-block-id="192"></div>
+                    <div class="box" style="top: 270px; left: 390px;" data-block-id="193"></div>
+                    <div class="box" style="top: 270px; left: 420px;" data-block-id="194"></div>
+                    <div class="box" style="top: 270px; left: 450px;" data-block-id="195"></div>
+                    <div class="box" style="top: 270px; left: 480px;" data-block-id="196"></div>
+                    <div class="box" style="top: 270px; left: 510px;" data-block-id="197"></div>
+                    <div class="box" style="top: 270px; left: 540px;" data-block-id="198"></div>
+                    <div class="box" style="top: 270px; left: 570px;" data-block-id="199"></div>
+                    <div class="box" style="top: 300px; left: 0px;" data-block-id="200"></div>
+                    <div class="box" style="top: 300px; left: 30px;" data-block-id="201"></div>
+                    <div class="box" style="top: 300px; left: 60px;" data-block-id="202"></div>
+                    <div class="box" style="top: 300px; left: 90px;" data-block-id="203"></div>
+                    <div class="box" style="top: 300px; left: 120px;" data-block-id="204"></div>
+                    <div class="box" style="top: 300px; left: 150px;" data-block-id="205"></div>
+                    <div class="box" style="top: 300px; left: 180px;" data-block-id="206"></div>
+                    <div class="box" style="top: 300px; left: 210px;" data-block-id="207"></div>
+                    <div class="box" style="top: 300px; left: 240px;" data-block-id="208"></div>
+                    <div class="box" style="top: 300px; left: 270px;" data-block-id="209"></div>
+                    <div class="box" style="top: 300px; left: 300px;" data-block-id="210"></div>
+                    <div class="box" style="top: 300px; left: 330px;" data-block-id="211"></div>
+                    <div class="box" style="top: 300px; left: 360px;" data-block-id="212"></div>
+                    <div class="box" style="top: 300px; left: 390px;" data-block-id="213"></div>
+                    <div class="box" style="top: 300px; left: 420px;" data-block-id="214"></div>
+                    <div class="box" style="top: 300px; left: 450px;" data-block-id="215"></div>
+                    <div class="box" style="top: 300px; left: 480px;" data-block-id="216"></div>
+                    <div class="box" style="top: 300px; left: 510px;" data-block-id="217"></div>
+                    <div class="box" style="top: 300px; left: 540px;" data-block-id="218"></div>
+                    <div class="box" style="top: 300px; left: 570px;" data-block-id="219"></div>
+                    <div class="box" style="top: 330px; left: 0px;" data-block-id="220"></div>
+                    <div class="box" style="top: 330px; left: 30px;" data-block-id="221"></div>
+                    <div class="box" style="top: 330px; left: 60px;" data-block-id="222"></div>
+                    <div class="box" style="top: 330px; left: 90px;" data-block-id="223"></div>
+                    <div class="box" style="top: 330px; left: 120px;" data-block-id="224"></div>
+                    <div class="box" style="top: 330px; left: 150px;" data-block-id="225"></div>
+                    <div class="box" style="top: 330px; left: 180px;" data-block-id="226"></div>
+                    <div class="box" style="top: 330px; left: 210px;" data-block-id="227"></div>
+                    <div class="box" style="top: 330px; left: 240px;" data-block-id="228"></div>
+                    <div class="box" style="top: 330px; left: 270px;" data-block-id="229"></div>
+                    <div class="box" style="top: 330px; left: 300px;" data-block-id="230"></div>
+                    <div class="box" style="top: 330px; left: 330px;" data-block-id="231"></div>
+                    <div class="box" style="top: 330px; left: 360px;" data-block-id="232"></div>
+                    <div class="box" style="top: 330px; left: 390px;" data-block-id="233"></div>
+                    <div class="box" style="top: 330px; left: 420px;" data-block-id="234"></div>
+                    <div class="box" style="top: 330px; left: 450px;" data-block-id="235"></div>
+                    <div class="box" style="top: 330px; left: 480px;" data-block-id="236"></div>
+                    <div class="box" style="top: 330px; left: 510px;" data-block-id="237"></div>
+                    <div class="box" style="top: 330px; left: 540px;" data-block-id="238"></div>
+                    <div class="box" style="top: 330px; left: 570px;" data-block-id="239"></div>
+                    <div class="box" style="top: 360px; left: 0px;" data-block-id="240"></div>
+                    <div class="box" style="top: 360px; left: 30px;" data-block-id="241"></div>
+                    <div class="box" style="top: 360px; left: 60px;" data-block-id="242"></div>
+                    <div class="box" style="top: 360px; left: 90px;" data-block-id="243"></div>
+                    <div class="box" style="top: 360px; left: 120px;" data-block-id="244"></div>
+                    <div class="box" style="top: 360px; left: 150px;" data-block-id="245"></div>
+                    <div class="box" style="top: 360px; left: 180px;" data-block-id="246"></div>
+                    <div class="box" style="top: 360px; left: 210px;" data-block-id="247"></div>
+                    <div class="box" style="top: 360px; left: 240px;" data-block-id="248"></div>
+                    <div class="box" style="top: 360px; left: 270px;" data-block-id="249"></div>
+                    <div class="box" style="top: 360px; left: 300px;" data-block-id="250"></div>
+                    <div class="box" style="top: 360px; left: 330px;" data-block-id="251"></div>
+                    <div class="box" style="top: 360px; left: 360px;" data-block-id="252"></div>
+                    <div class="box" style="top: 360px; left: 390px;" data-block-id="253"></div>
+                    <div class="box" style="top: 360px; left: 420px;" data-block-id="254"></div>
+                    <div class="box" style="top: 360px; left: 450px;" data-block-id="255"></div>
+                    <div class="box" style="top: 360px; left: 480px;" data-block-id="256"></div>
+                    <div class="box" style="top: 360px; left: 510px;" data-block-id="257"></div>
+                    <div class="box" style="top: 360px; left: 540px;" data-block-id="258"></div>
+                    <div class="box" style="top: 360px; left: 570px;" data-block-id="259"></div>
+                    <div class="box" style="top: 390px; left: 0px;" data-block-id="260"></div>
+                    <div class="box" style="top: 390px; left: 30px;" data-block-id="261"></div>
+                    <div class="box" style="top: 390px; left: 60px;" data-block-id="262"></div>
+                    <div class="box" style="top: 390px; left: 90px;" data-block-id="263"></div>
+                    <div class="box" style="top: 390px; left: 120px;" data-block-id="264"></div>
+                    <div class="box" style="top: 390px; left: 150px;" data-block-id="265"></div>
+                    <div class="box" style="top: 390px; left: 180px;" data-block-id="266"></div>
+                    <div class="box" style="top: 390px; left: 210px;" data-block-id="267"></div>
+                    <div class="box" style="top: 390px; left: 240px;" data-block-id="268"></div>
+                    <div class="box" style="top: 390px; left: 270px;" data-block-id="269"></div>
+                    <div class="box" style="top: 390px; left: 300px;" data-block-id="270"></div>
+                    <div class="box" style="top: 390px; left: 330px;" data-block-id="271"></div>
+                    <div class="box" style="top: 390px; left: 360px;" data-block-id="272"></div>
+                    <div class="box" style="top: 390px; left: 390px;" data-block-id="273"></div>
+                    <div class="box" style="top: 390px; left: 420px;" data-block-id="274"></div>
+                    <div class="box" style="top: 390px; left: 450px;" data-block-id="275"></div>
+                    <div class="box" style="top: 390px; left: 480px;" data-block-id="276"></div>
+                    <div class="box" style="top: 390px; left: 510px;" data-block-id="277"></div>
+                    <div class="box" style="top: 390px; left: 540px;" data-block-id="278"></div>
+                    <div class="box" style="top: 390px; left: 570px;" data-block-id="279"></div>
+                    <div class="box" style="top: 420px; left: 0px;" data-block-id="280"></div>
+                    <div class="box" style="top: 420px; left: 30px;" data-block-id="281"></div>
+                    <div class="box" style="top: 420px; left: 60px;" data-block-id="282"></div>
+                    <div class="box" style="top: 420px; left: 90px;" data-block-id="283"></div>
+                    <div class="box" style="top: 420px; left: 120px;" data-block-id="284"></div>
+                    <div class="box" style="top: 420px; left: 150px;" data-block-id="285"></div>
+                    <div class="box" style="top: 420px; left: 180px;" data-block-id="286"></div>
+                    <div class="box" style="top: 420px; left: 210px;" data-block-id="287"></div>
+                    <div class="box" style="top: 420px; left: 240px;" data-block-id="288"></div>
+                    <div class="box" style="top: 420px; left: 270px;" data-block-id="289"></div>
+                    <div class="box" style="top: 420px; left: 300px;" data-block-id="290"></div>
+                    <div class="box" style="top: 420px; left: 330px;" data-block-id="291"></div>
+                    <div class="box" style="top: 420px; left: 360px;" data-block-id="292"></div>
+                    <div class="box" style="top: 420px; left: 390px;" data-block-id="293"></div>
+                    <div class="box" style="top: 420px; left: 420px;" data-block-id="294"></div>
+                    <div class="box" style="top: 420px; left: 450px;" data-block-id="295"></div>
+                    <div class="box" style="top: 420px; left: 480px;" data-block-id="296"></div>
+                    <div class="box" style="top: 420px; left: 510px;" data-block-id="297"></div>
+                    <div class="box" style="top: 420px; left: 540px;" data-block-id="298"></div>
+                    <div class="box" style="top: 420px; left: 570px;" data-block-id="299"></div>
+                    <div class="box" style="top: 450px; left: 0px;" data-block-id="300"></div>
+                    <div class="box" style="top: 450px; left: 30px;" data-block-id="301"></div>
+                    <div class="box" style="top: 450px; left: 60px;" data-block-id="302"></div>
+                    <div class="box" style="top: 450px; left: 90px;" data-block-id="303"></div>
+                    <div class="box" style="top: 450px; left: 120px;" data-block-id="304"></div>
+                    <div class="box" style="top: 450px; left: 150px;" data-block-id="305"></div>
+                    <div class="box" style="top: 450px; left: 180px;" data-block-id="306"></div>
+                    <div class="box" style="top: 450px; left: 210px;" data-block-id="307"></div>
+                    <div class="box" style="top: 450px; left: 240px;" data-block-id="308"></div>
+                    <div class="box" style="top: 450px; left: 270px;" data-block-id="309"></div>
+                    <div class="box" style="top: 450px; left: 300px;" data-block-id="310"></div>
+                    <div class="box" style="top: 450px; left: 330px;" data-block-id="311"></div>
+                    <div class="box" style="top: 450px; left: 360px;" data-block-id="312"></div>
+                    <div class="box" style="top: 450px; left: 390px;" data-block-id="313"></div>
+                    <div class="box" style="top: 450px; left: 420px;" data-block-id="314"></div>
+                    <div class="box" style="top: 450px; left: 450px;" data-block-id="315"></div>
+                    <div class="box" style="top: 450px; left: 480px;" data-block-id="316"></div>
+                    <div class="box" style="top: 450px; left: 510px;" data-block-id="317"></div>
+                    <div class="box" style="top: 450px; left: 540px;" data-block-id="318"></div>
+                    <div class="box" style="top: 450px; left: 570px;" data-block-id="319"></div>
+                    <div class="box" style="top: 480px; left: 0px;" data-block-id="320"></div>
+                    <div class="box" style="top: 480px; left: 30px;" data-block-id="321"></div>
+                    <div class="box" style="top: 480px; left: 60px;" data-block-id="322"></div>
+                    <div class="box" style="top: 480px; left: 90px;" data-block-id="323"></div>
+                    <div class="box" style="top: 480px; left: 120px;" data-block-id="324"></div>
+                    <div class="box" style="top: 480px; left: 150px;" data-block-id="325"></div>
+                    <div class="box" style="top: 480px; left: 180px;" data-block-id="326"></div>
+                    <div class="box" style="top: 480px; left: 210px;" data-block-id="327"></div>
+                    <div class="box" style="top: 480px; left: 240px;" data-block-id="328"></div>
+                    <div class="box" style="top: 480px; left: 270px;" data-block-id="329"></div>
+                    <div class="box" style="top: 480px; left: 300px;" data-block-id="330"></div>
+                    <div class="box" style="top: 480px; left: 330px;" data-block-id="331"></div>
+                    <div class="box" style="top: 480px; left: 360px;" data-block-id="332"></div>
+                    <div class="box" style="top: 480px; left: 390px;" data-block-id="333"></div>
+                    <div class="box" style="top: 480px; left: 420px;" data-block-id="334"></div>
+                    <div class="box" style="top: 480px; left: 450px;" data-block-id="335"></div>
+                    <div class="box" style="top: 480px; left: 480px;" data-block-id="336"></div>
+                    <div class="box" style="top: 480px; left: 510px;" data-block-id="337"></div>
+                    <div class="box" style="top: 480px; left: 540px;" data-block-id="338"></div>
+                    <div class="box" style="top: 480px; left: 570px;" data-block-id="339"></div>
+                    <div class="box" style="top: 510px; left: 0px;" data-block-id="340"></div>
+                    <div class="box" style="top: 510px; left: 30px;" data-block-id="341"></div>
+                    <div class="box" style="top: 510px; left: 60px;" data-block-id="342"></div>
+                    <div class="box" style="top: 510px; left: 90px;" data-block-id="343"></div>
+                    <div class="box" style="top: 510px; left: 120px;" data-block-id="344"></div>
+                    <div class="box" style="top: 510px; left: 150px;" data-block-id="345"></div>
+                    <div class="box" style="top: 510px; left: 180px;" data-block-id="346"></div>
+                    <div class="box" style="top: 510px; left: 210px;" data-block-id="347"></div>
+                    <div class="box" style="top: 510px; left: 240px;" data-block-id="348"></div>
+                    <div class="box" style="top: 510px; left: 270px;" data-block-id="349"></div>
+                    <div class="box" style="top: 510px; left: 300px;" data-block-id="350"></div>
+                    <div class="box" style="top: 510px; left: 330px;" data-block-id="351"></div>
+                    <div class="box" style="top: 510px; left: 360px;" data-block-id="352"></div>
+                    <div class="box" style="top: 510px; left: 390px;" data-block-id="353"></div>
+                    <div class="box" style="top: 510px; left: 420px;" data-block-id="354"></div>
+                    <div class="box" style="top: 510px; left: 450px;" data-block-id="355"></div>
+                    <div class="box" style="top: 510px; left: 480px;" data-block-id="356"></div>
+                    <div class="box" style="top: 510px; left: 510px;" data-block-id="357"></div>
+                    <div class="box" style="top: 510px; left: 540px;" data-block-id="358"></div>
+                    <div class="box" style="top: 510px; left: 570px;" data-block-id="359"></div>
+                    <div class="box" style="top: 540px; left: 0px;" data-block-id="360"></div>
+                    <div class="box" style="top: 540px; left: 30px;" data-block-id="361"></div>
+                    <div class="box" style="top: 540px; left: 60px;" data-block-id="362"></div>
+                    <div class="box" style="top: 540px; left: 90px;" data-block-id="363"></div>
+                    <div class="box" style="top: 540px; left: 120px;" data-block-id="364"></div>
+                    <div class="box" style="top: 540px; left: 150px;" data-block-id="365"></div>
+                    <div class="box" style="top: 540px; left: 180px;" data-block-id="366"></div>
+                    <div class="box" style="top: 540px; left: 210px;" data-block-id="367"></div>
+                    <div class="box" style="top: 540px; left: 240px;" data-block-id="368"></div>
+                    <div class="box" style="top: 540px; left: 270px;" data-block-id="369"></div>
+                    <div class="box" style="top: 540px; left: 300px;" data-block-id="370"></div>
+                    <div class="box" style="top: 540px; left: 330px;" data-block-id="371"></div>
+                    <div class="box" style="top: 540px; left: 360px;" data-block-id="372"></div>
+                    <div class="box" style="top: 540px; left: 390px;" data-block-id="373"></div>
+                    <div class="box" style="top: 540px; left: 420px;" data-block-id="374"></div>
+                    <div class="box" style="top: 540px; left: 450px;" data-block-id="375"></div>
+                    <div class="box" style="top: 540px; left: 480px;" data-block-id="376"></div>
+                    <div class="box" style="top: 540px; left: 510px;" data-block-id="377"></div>
+                    <div class="box" style="top: 540px; left: 540px;" data-block-id="378"></div>
+                    <div class="box" style="top: 540px; left: 570px;" data-block-id="379"></div>
+                    <div class="box" style="top: 570px; left: 0px;" data-block-id="380"></div>
+                    <div class="box" style="top: 570px; left: 30px;" data-block-id="381"></div>
+                    <div class="box" style="top: 570px; left: 60px;" data-block-id="382"></div>
+                    <div class="box" style="top: 570px; left: 90px;" data-block-id="383"></div>
+                    <div class="box" style="top: 570px; left: 120px;" data-block-id="384"></div>
+                    <div class="box" style="top: 570px; left: 150px;" data-block-id="385"></div>
+                    <div class="box" style="top: 570px; left: 180px;" data-block-id="386"></div>
+                    <div class="box" style="top: 570px; left: 210px;" data-block-id="387"></div>
+                    <div class="box" style="top: 570px; left: 240px;" data-block-id="388"></div>
+                    <div class="box" style="top: 570px; left: 270px;" data-block-id="389"></div>
+                    <div class="box" style="top: 570px; left: 300px;" data-block-id="390"></div>
+                    <div class="box" style="top: 570px; left: 330px;" data-block-id="391"></div>
+                    <div class="box" style="top: 570px; left: 360px;" data-block-id="392"></div>
+                    <div class="box" style="top: 570px; left: 390px;" data-block-id="393"></div>
+                    <div class="box" style="top: 570px; left: 420px;" data-block-id="394"></div>
+                    <div class="box" style="top: 570px; left: 450px;" data-block-id="395"></div>
+                    <div class="box" style="top: 570px; left: 480px;" data-block-id="396"></div>
+                    <div class="box" style="top: 570px; left: 510px;" data-block-id="397"></div>
+                    <div class="box" style="top: 570px; left: 540px;" data-block-id="398"></div>
+                    <div class="box" style="top: 570px; left: 570px;" data-block-id="399"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+</body>
+
+</html>

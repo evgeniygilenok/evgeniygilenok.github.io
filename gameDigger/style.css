@@ -1,0 +1,355 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.container {
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+    width: 800px;
+    height: 700px;
+    border: 1px solid;
+}
+.start-page {
+            /* display: none;         */
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.5);
+}
+.game p{
+    text-align: center;
+    font-size: 16px;
+}
+.dashboard {
+     display: none; 
+    position: absolute;
+    z-index: 103;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.5);
+}
+.dashboard p {
+    text-align: center;
+    margin-top: 130px;
+    padding-top: 20px;
+}
+#close-dashboard {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 30px;
+    cursor: pointer;
+}
+#close-dashboard:hover {
+    color: red;
+}
+#dashboard-list {
+    position: relative;
+    top: 25px;
+    margin: 0 auto;
+    width: 300px;
+    height: 400px;
+}
+#dashboard-list li {
+    position: relative;
+    margin: 10px;
+}
+#dashboard-list li:hover {
+    background-color: rgba(198, 198, 198, 0.5);
+    cursor: default;
+}
+.playerScore {
+    position: absolute;
+    right: 10px;
+}
+#start-level {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.5);
+}
+#start-new-level {
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 300px;
+    width: 200px;
+    height: 70px;
+    background-color: #009900;
+    color: white;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 10px;
+}
+#start-new-level:hover {
+    background-color: #00cc00;
+}
+#restart {
+    display: none; 
+    position: absolute;
+    z-index: 98;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.5);
+}
+#restart p{
+    margin-top: 200px;
+    text-align: center;
+    font-size: 30px;
+    color: brown;
+    font-weight: bold;
+}
+#restart-btn {
+    cursor: pointer;
+    margin: 0 auto;
+    width: 200px;
+    height: 70px;
+    background-color: #4499aa;
+    color: black;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 10px;
+}
+#new-game {
+     display: none;  
+    position: absolute;
+    z-index: 98;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.5);
+}
+#new-game p{
+    margin-top: 200px;
+    text-align: center;
+    font-size: 30px;
+    color: aqua;
+    font-weight: bold;
+}
+#new-game-btn {
+    cursor: pointer;
+    margin: 0 auto;
+    width: 200px;
+    height: 70px;
+    background-color: #a8f6d2;
+    color: black;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 10px;
+}
+#start-btn {
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 200px;
+    height: 70px;
+    background-color: #009900;
+    color: white;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 10px;
+}
+#start-btn:hover {
+    background-color: #00cc00;
+    box-shadow: 0 0 5px #333;
+}
+#rules-btn {
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 200px;
+    height: 70px;
+    background-color: #b3003b;
+    color: white;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+}
+#rules-btn:hover {
+    background-color: #e6004c;
+    box-shadow: 0 0 5px #333;
+}
+.dashboard-wrap {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 90px;
+    width: 400px;
+    height: 400px;
+    border-radius: 40px;
+    background-color: #eee;
+    box-shadow: 0 0 20px #333;
+}
+.dashboard-btn {
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 200px;
+    height: 70px;
+    background-color: #151580;
+    color: white;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 10px;
+}
+.dashboard-btn:hover {
+    background-color: #41419d;
+    box-shadow: 0 0 5px #333;
+}
+.rules {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    background-color: rgba(238, 238, 238, 0.3);
+}
+.rules-wrap {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 90px;
+    width: 400px;
+    height: 550px;
+    border-radius: 40px;
+    background-color: #eee;
+    box-shadow: 0 0 20px #333;
+}
+.rules-list {
+    font-size: 15px;
+    position: relative;
+    padding: 0;
+    top: 20px;
+    margin: 0 auto;
+    width: 350px;
+    height: 400px;
+    margin-top: 75px;
+}
+.rules-list h3 {
+    text-align: center;
+}
+.rules-list p {
+    text-align: justify;
+}
+.rules-list li {
+    margin: 5px;
+}
+.rules-list li:hover {
+    background-color: #fff;
+}
+#close-rules {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 30px;
+    cursor: pointer;
+}
+#close-rules:hover {
+    color: red;
+}
+.field {
+    position: relative;
+    height: 100%;
+}
+.game-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+    background-color: #888;
+}
+.game-title div {
+    height: 100%;
+    box-sizing: border-box;
+    width: 19.5%;
+}
+.game-field {
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+    width: 600px;
+}
+.lives {
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.game-field-blocks div {
+    box-sizing: border-box;
+}
+.game-field-blocks {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+.box {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    background-image: url('img/dirt.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+.gold {
+    background-image: url('img/gold.png');
+    background-repeat: no-repeat;
+}
+.stone {
+    background-image: url('img/stone.png');
+    background-repeat: no-repeat;
+}
+.tunnel {
+    background-image: url('img/wood.png');
+}
+.one-life {
+    background-image: url('img/one-life.png');
+}
+.hero {
+    background-image: url('img/dwarf.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.enemy {
+    background-image: url('img/minibatwood.png');
+}
+.engryEnemy {
+    background-image: url('img/angrybatwood.png');
+}
+.web {
+    background-image: url('img/webw.png');
+}
+.fire {
+    line-height: 30px;
+    text-align: center;
+    color: lime;
+    background-image: url('img/fire.png');
+}
+.stackedHero {
+    background-image: url('img/stackedHero.png');
+}
