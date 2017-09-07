@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    margin: 50px auto;
+    border: 1px solid black;
+    height: 800px;
+    width: 1000px;
+    background-color: darkgrey;
+}
+.box {
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+    position: relative;
+}
+img {
+    width: 200px;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    opacity: 1;
+    transition: 1s;
+    animation: opa 2s ease-in-out;
+    animation-play-state: paused;
+    object-fit: cover;
+}
+.i1 {
+    left: 0;
+}
+.i2 {
+    left: 200px;
+}
+.i3 {
+    left: 400px;
+}
+.i4 {
+    left: 600px;
+}
+.i5 {
+    left: 800px;
+}
+@keyframes opa {
+    0% {
+        opacity: 1;
+    }
+    24.9% {
+        opacity: 0.5;
+    }
+    25.1% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    50.1% {
+        opacity: 1;
+    }
+    74.9% {
+        opacity: 0.5;
+    }
+    75.1% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
