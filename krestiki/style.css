@@ -1,0 +1,61 @@
+.content {
+     margin: 0 auto; 
+     width: 400px; 
+    border: 1px solid;
+    padding: 30px;
+    font-family: sans-serif;
+    background-color: #ddd;
+}
+
+.pole {
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+}
+.game {
+    margin: 30px auto;
+    width: 150px;
+}
+.cell {
+    cursor: pointer;
+    float: left;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
+    text-align: center;
+    font-size: 35px;
+    border: 1px solid;
+    font-weight: bold;
+}
+.x {
+    background-color: purple;
+    color: white;
+}
+.o {
+    background-color: gold;
+}
+#title {
+    margin-bottom: 30px;
+    height: 50px;
+    width: 150px;
+    font-size: 22px;
+    line-height: 50px;
+    text-align: center;
+}
+#newGame {
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 20px;
+}
+.winner {
+    background-color: green;
+    color: white;
+}
