@@ -25,7 +25,7 @@ button {
 }
 
 .block {
-  border: 1px solid;
+  /* border: 1px solid; */
   font-size: 18px;
 }
 
@@ -45,7 +45,7 @@ button {
   position: fixed;
   top: 0;
   width: 50%;
-  /* left: 25%; */
+  left: 25%;
 }
 
 .padd {

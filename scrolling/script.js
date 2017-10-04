@@ -5,37 +5,56 @@ const blocks = document.querySelectorAll('.block');
 const initializeButton = document.getElementById('initialize');
 const disableButton = document.getElementById('disable');
 
+
+
 class ScrollBlocks {
 
   constructor(items) {
     this.items = items;
     this.blocksCoords = [];
     self = this;
-
+    let start = window.pageYOffset;
+    window.scrollTo(0,0);
     // fill an array of blocks coordinates
-    for (let i = 0; i < items.length; i++) {
-        this.blocksCoords[this.blocksCoords.length] = items[i].getBoundingClientRect().top;
+    if (items && items.length > 0) {
+      for (let i = 0; i < items.length; i++) {
+        if (typeof items[i] === 'object' && items[i].classList.contains('block')) {
+          this.blocksCoords[this.blocksCoords.length] = items[i].getBoundingClientRect().top;
+        } else {
+          console.log('it must be blocks');
+          break;
+        }
+      }
+    } else {
+      console.log('no data');
     }
+    window.scrollTo(0,start);
   }
   
   scrolling() {
-
     // getting scroll coordinates
     let scrollCoords = window.pageYOffset;
-
+    
     // going through an array blocksCoords and adding or remove fixed position to the title
     for (let i = 0; i < self.blocksCoords.length; i++) {
       if (self.blocksCoords[i] < scrollCoords) {
-          self.items[i].children[0].classList.add('fix');
-          self.items[i].children[1].classList.add('padd');
+        self.items[i].children[0].classList.add('fix');
+        self.items[i].children[1].classList.add('padd');
       } else if (self.blocksCoords[i] > scrollCoords) {
         self.items[i].children[0].classList.remove('fix');
         self.items[i].children[1].classList.remove('padd');
       }
     }
   }
-
+    
   initialize() {
+    let cord = window.pageYOffset;
+    for (let i = 0; i < self.blocksCoords.length; i++) {
+      if (self.blocksCoords[i] < cord) {
+          self.items[i].children[0].classList.add('fix');
+          self.items[i].children[1].classList.add('padd');
+      }
+    }
     window.addEventListener("scroll", this.scrolling)
   }
 
