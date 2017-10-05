@@ -30,6 +30,7 @@ class ScrollBlocks {
       console.log('no data');
     }
     window.scrollTo(0,start);
+    self.blocksCoordsLength = this.blocksCoords.length
   }
   
   scrolling() {
@@ -44,6 +45,11 @@ class ScrollBlocks {
       self.items[self.offsetBlock].children[0].classList.remove('fix');
       self.items[self.offsetBlock].children[1].classList.remove('padd');
       self.offsetBlock--;
+    }
+    if (self.offsetBlock < 0) {
+      self.offsetBlock = 1;
+    } else if (self.offsetBlock > self.blocksCoordsLength - 1) {
+      self.offsetBlock = self.blocksCoordsLength - 1;
     }
     
     // going through an array blocksCoords and adding or remove fixed position to the title
