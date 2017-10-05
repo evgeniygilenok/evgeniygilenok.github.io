@@ -12,6 +12,7 @@ class ScrollBlocks {
   constructor(items) {
     this.items = items;
     this.blocksCoords = [];
+    this.offsetBlock = 0;
     self = this;
     let start = window.pageYOffset;
     window.scrollTo(0,0);
@@ -34,17 +35,27 @@ class ScrollBlocks {
   scrolling() {
     // getting scroll coordinates
     let scrollCoords = window.pageYOffset;
+
+    if (self.blocksCoords[self.offsetBlock] < scrollCoords) {
+      self.items[self.offsetBlock].children[0].classList.add('fix');
+      self.items[self.offsetBlock].children[1].classList.add('padd');
+      self.offsetBlock++;
+    } else if (self.blocksCoords[self.offsetBlock] >= scrollCoords) {
+      self.items[self.offsetBlock].children[0].classList.remove('fix');
+      self.items[self.offsetBlock].children[1].classList.remove('padd');
+      self.offsetBlock--;
+    }
     
     // going through an array blocksCoords and adding or remove fixed position to the title
-    for (let i = 0; i < self.blocksCoords.length; i++) {
-      if (self.blocksCoords[i] < scrollCoords) {
-        self.items[i].children[0].classList.add('fix');
-        self.items[i].children[1].classList.add('padd');
-      } else if (self.blocksCoords[i] > scrollCoords) {
-        self.items[i].children[0].classList.remove('fix');
-        self.items[i].children[1].classList.remove('padd');
-      }
-    }
+    // for (let i = 0; i < self.blocksCoords.length; i++) {
+    //   if (self.blocksCoords[i] < scrollCoords) {
+    //     self.items[i].children[0].classList.add('fix');
+    //     self.items[i].children[1].classList.add('padd');
+    //   } else if (self.blocksCoords[i] > scrollCoords) {
+    //     self.items[i].children[0].classList.remove('fix');
+    //     self.items[i].children[1].classList.remove('padd');
+    //   }
+    // }
   }
     
   initialize() {
@@ -53,6 +64,9 @@ class ScrollBlocks {
       if (self.blocksCoords[i] < cord) {
           self.items[i].children[0].classList.add('fix');
           self.items[i].children[1].classList.add('padd');
+      } else {
+        self.offsetBlock = i;
+        break;
       }
     }
     window.addEventListener("scroll", this.scrolling)
