@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ITRex</title>
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="block">
+    <div class="left-side bl">
+      <div class="nav">
+        <div class="btn" id="turn-left"><i class="fa fa-undo" aria-hidden="true"></i></div>
+        <div class="btn" id="newBtn">New</div>
+        <div class="btn" id="turn-right"><i class="fa fa-repeat" aria-hidden="true"></i></div>
+      </div>
+      <div class="domino-field">
+        <div id="one-domino">
+          <div class="domino four">
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+          </div>
+          <div class="domino five">
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+          </div>
+        </div>
+      </div>
+      <div class="ranges">
+        <span>Size</span><input type="range" min="60" max="260" value="100" id="input-range">
+      </div>
+    </div>
+    <div class="dominos bl">
+      <div class="domino one" id="1">
+        <span class="circle"></span>
+      </div>
+      <div class="domino two" id="2">
+        <span class="circle"></span>
+        <span class="circle"></span>
+      </div>
+      <div class="domino three" id="3">
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+      </div>
+      <div class="domino four" id="4">
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+      </div>
+      <div class="domino five" id="5">
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+      </div>
+      <div class="domino six" id="6">
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+      ':35729/livereload.js?snipver=1"></' + 'script>')
+  </script>
+</body>
+
+</html>
