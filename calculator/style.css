@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 50px;
+  font-family: sans-serif;
+}
+
+body div {
+  box-sizing: border-box;
+}
+
+.root {
+  background-color: #ddd;
+  margin: 0 auto;
+  width: 350px;
+  border: 1px solid;
+}
+
+.screen {
+  padding-top: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+.screen input {
+  background-color: #ddd;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: 30px;
+  outline: none;
+  transition: 0.3s;
+}
+.screen input:focus {
+  border-bottom: 1px solid #fff;
+}
+.result {
+  height: 50px;
+  font-size: 30px;
+  line-height: 50px;
+}
+.result span {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 200px;
+}
+
+.buttons {
+  position: relative;
+  height: 300px;
+}
+.btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 2px 2px #fff;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.btn:active {
+  box-shadow: none;
+}
+
+#zero {
+  left: 50px;
+  top: 200px;
+}
+#one {
+  left: 50px;
+  top: 140px;
+}
+#two {
+  left: 100px;
+  top: 140px;
+}
+#three {
+  left: 150px;
+  top: 140px;
+}
+#four {
+  left: 50px;
+  top: 80px;
+}
+#five {
+  left: 100px;
+  top: 80px;
+}
+#six {
+  left: 150px;
+  top: 80px;
+}
+#seven {
+  left: 50px;
+  top: 20px;
+}
+#eight {
+  left: 100px;
+  top: 20px;
+}
+#nine {
+  left: 150px;
+  top: 20px;
+}
+#leftBr {
+  left: 200px;
+  top: 20px;
+}
+#rightBr {
+  left: 250px;
+  top: 20px;
+}
+#plus {
+  left: 200px;
+  top: 80px;
+}
+#minus {
+  left: 250px;
+  top: 80px;
+}
+#divide {
+  left: 200px;
+  top: 140px;
+}
+#multi {
+  left: 250px;
+  top: 140px;
+}
+#equals {
+  left: 200px;
+  top: 200px;
+}
+#clear {
+  left: 250px;
+  top: 200px;
+}
+#dot {
+  left: 100px;
+  top: 200px;
+}
